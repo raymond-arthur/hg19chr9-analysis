@@ -12,6 +12,25 @@ Arthur Raymond
   - [Nucleotide Frequency](#nucleotide-frequency)
   - [Runs of Nucleotides](#runs-of-nucleotides)
 
+``` r
+## Libraries
+
+#tidyverse for plotting and vis
+library(tidyverse)
+
+#janitor for cont tables
+library(janitor)
+
+#reshape2 for melting data
+library(reshape2)
+
+#base BSgenome
+library(BSgenome)
+
+#genome for Homo sapiens
+library(BSgenome.Hsapiens.UCSC.hg19)
+```
+
 # The human genome v19
 
 Pulling the Human Genome v19 (hg19) and saving it locally as a local
