@@ -152,7 +152,7 @@ longest_consecutive <- function(sequence) {
   return(list(character = max_char, length = max_count))
 }
 
-result <- longest_consecutive(sequence)
+result <- longest_consecutive(ABO_char)
 
 cat("Longest consecutive sequence:", result$length, "characters of", result$character, "\n")
 
@@ -214,3 +214,4 @@ ggplot(counts_df_long, aes(x = Character, y = value, fill = variable)) +
 chisq.test(counts_df$Runs_5_plus)
 # X-squared = 26.767, df = 3, p-value = 6.588e-16
 # We reject the null hypothesis and conclude that there is a significant difference in the number of runs of nucleotides in the ABO gene
+
