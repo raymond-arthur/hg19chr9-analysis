@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, output = FALSE}
+```{r, echo = FALSE}
 ## Libraries
 
 #tidyverse for plotting and vis
