@@ -34,8 +34,8 @@ library(BSgenome.Hsapiens.UCSC.hg19)
 # The human genome v19
 
 Pulling the Human Genome v19 (hg19) and saving it locally as a local
-file (S4), raw html character string, and raw html character string with
-line breaks
+file (.rds), raw html character string, and raw html character string
+with line breaks
 
 ## Pulling the genome:
 
@@ -85,7 +85,7 @@ seqchr9q34.2 <- getSeq(genome, "chr9", start=135900001, end=137400000)
 #isolate ABO gene
 seqchr9q34.2ABO <- getSeq(genome, "chr9", start=136130563, end=136150630)
 
-#look at ABO gene as S4 file
+#look at ABO gene as rds file
 seqchr9q34.2ABO
 ```
 
@@ -179,7 +179,7 @@ df <- df[, c("Letter", "atcg")]
 #remove all rows where frequency is 0
 df <- df[df$atcg != 0,]
 
-#plot the data with ggplot with g being blue, t being pink, c being green and a being red
+#plot the data with ggplot with g being blue, t  pink, c  green and a  red
 ggplot(df, aes(x = Letter, y = atcg, fill = Letter)) +
   geom_bar(stat = "identity") +
   scale_fill_manual(values = c("red", "green", "blue", "pink")) +
@@ -194,10 +194,11 @@ ggplot(df, aes(x = Letter, y = atcg, fill = Letter)) +
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ``` r
-##Perform statistical analysis to see if there is a significant difference in the frequency of nucleotides
+##Perform statistical analysis to see if there is a significant difference 
+## in the frequency of nucleotides
 #perform a chi-squared test
-  #H0: there is no significant difference in the frequency of nucleotides in the ABO gene
-  #H1: there is a significant difference in the frequency of nucleotides in the ABO gene
+  #H0: there is no significant difference in the frequency of nucleotides 
+  #H1: there is a significant difference in the frequency of nucleotides
 chisq.test(df$atcg)
 ```
 
@@ -208,8 +209,8 @@ chisq.test(df$atcg)
     ## X-squared = 41.998, df = 3, p-value = 4.015e-09
 
 ``` r
-  #X-squared = 41.998 (crit 7.81), df = 3, p-value = 4.015e-09
-#We reject the null hypothesis and conclude that there is a significant difference in the frequency of nucleotides in the ABO gene
+#We reject the null hypothesis and conclude that there is a significant 
+# difference in the frequency of nucleotides in the ABO gene
 ```
 
 ## Nucleotide Frequency
@@ -325,7 +326,9 @@ ggplot(counts_df_long, aes(x = Character, y = value, fill = variable)) +
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
-# Perform statistical analysis to see if there is a significant difference in the number of runs of nucleotides
+# Perform statistical analysis to see if there is a significant difference 
+# in the number of runs of nucleotides
+
 # Perform a chi-squared test
 # H0: there is no significant difference in the number of runs of nucleotides in the ABO gene
 # H1: there is a significant difference in the number of runs of nucleotides in the ABO gene
@@ -339,6 +342,6 @@ chisq.test(counts_df$Runs_5_plus)
     ## X-squared = 26.767, df = 3, p-value = 6.588e-06
 
 ``` r
-# X-squared = 26.767, df = 3, p-value = 6.588e-16
-# We reject the null hypothesis and conclude that there is a significant difference in the number of runs of nucleotides in the ABO gene
+# We reject the null hypothesis and conclude that there is a significant difference 
+# in the number of runs of nucleotides in the ABO gene
 ```
