@@ -228,7 +228,12 @@ chisq.test(df$atcg)
 ``` r
 #We reject the null hypothesis and conclude that there is a significant 
 # difference in the frequency of nucleotides in the ABO gene
+
+g_c_content <- (atcg[3] + atcg[4]) / sum(atcg)
+cat("G+C content:", round(g_c_content,4), "\n")
 ```
+
+    ## G+C content: 0.487
 
 ## Nucleotide Frequency
 
