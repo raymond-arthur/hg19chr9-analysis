@@ -12,13 +12,6 @@ Arthur Raymond
   - [Nucleotide Frequency](#nucleotide-frequency)
   - [Runs of Nucleotides](#runs-of-nucleotides)
 
-``` r
-## Libraries
-
-#tidyverse for plotting and vis
-library(tidyverse)
-```
-
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
     ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
@@ -29,51 +22,44 @@ library(tidyverse)
     ## ✖ dplyr::filter() masks stats::filter()
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
-#janitor for cont tables
-library(janitor)
-```
-
     ## 
     ## Attaching package: 'janitor'
+    ## 
     ## 
     ## The following objects are masked from 'package:stats':
     ## 
     ##     chisq.test, fisher.test
-
-``` r
-#reshape2 for melting data
-library(reshape2)
-```
-
+    ## 
+    ## 
     ## 
     ## Attaching package: 'reshape2'
+    ## 
     ## 
     ## The following object is masked from 'package:tidyr':
     ## 
     ##     smiths
-
-``` r
-#base BSgenome
-library(BSgenome)
-```
-
+    ## 
+    ## 
     ## Loading required package: BiocGenerics
     ## 
+    ## 
     ## Attaching package: 'BiocGenerics'
+    ## 
     ## 
     ## The following objects are masked from 'package:lubridate':
     ## 
     ##     intersect, setdiff, union
     ## 
+    ## 
     ## The following objects are masked from 'package:dplyr':
     ## 
     ##     combine, intersect, setdiff, union
     ## 
+    ## 
     ## The following objects are masked from 'package:stats':
     ## 
     ##     IQR, mad, sd, var, xtabs
+    ## 
     ## 
     ## The following objects are masked from 'package:base':
     ## 
@@ -84,82 +70,103 @@ library(BSgenome)
     ##     Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
     ##     table, tapply, union, unique, unsplit, which.max, which.min
     ## 
+    ## 
     ## Loading required package: S4Vectors
+    ## 
     ## Loading required package: stats4
     ## 
+    ## 
     ## Attaching package: 'S4Vectors'
+    ## 
     ## 
     ## The following objects are masked from 'package:lubridate':
     ## 
     ##     second, second<-
     ## 
+    ## 
     ## The following objects are masked from 'package:dplyr':
     ## 
     ##     first, rename
+    ## 
     ## 
     ## The following object is masked from 'package:tidyr':
     ## 
     ##     expand
     ## 
+    ## 
     ## The following object is masked from 'package:utils':
     ## 
     ##     findMatches
+    ## 
     ## 
     ## The following objects are masked from 'package:base':
     ## 
     ##     expand.grid, I, unname
     ## 
+    ## 
     ## Loading required package: IRanges
     ## 
+    ## 
     ## Attaching package: 'IRanges'
+    ## 
     ## 
     ## The following object is masked from 'package:lubridate':
     ## 
     ##     %within%
     ## 
+    ## 
     ## The following objects are masked from 'package:dplyr':
     ## 
     ##     collapse, desc, slice
+    ## 
     ## 
     ## The following object is masked from 'package:purrr':
     ## 
     ##     reduce
     ## 
+    ## 
     ## The following object is masked from 'package:grDevices':
     ## 
     ##     windows
     ## 
+    ## 
     ## Loading required package: GenomeInfoDb
+    ## 
     ## Loading required package: GenomicRanges
+    ## 
     ## Loading required package: Biostrings
+    ## 
     ## Loading required package: XVector
     ## 
+    ## 
     ## Attaching package: 'XVector'
+    ## 
     ## 
     ## The following object is masked from 'package:purrr':
     ## 
     ##     compact
     ## 
     ## 
+    ## 
     ## Attaching package: 'Biostrings'
+    ## 
     ## 
     ## The following object is masked from 'package:base':
     ## 
     ##     strsplit
     ## 
+    ## 
     ## Loading required package: BiocIO
+    ## 
     ## Loading required package: rtracklayer
     ## 
+    ## 
     ## Attaching package: 'rtracklayer'
+    ## 
     ## 
     ## The following object is masked from 'package:BiocIO':
     ## 
     ##     FileForFormat
-
-``` r
-#genome for Homo sapiens
-library(BSgenome.Hsapiens.UCSC.hg19)
-```
 
 # The human genome v19
 
