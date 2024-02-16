@@ -31,11 +31,13 @@ library(BSgenome.Hsapiens.UCSC.hg19)
 ```
 
 \newpage
-#The human genome v19
+
+# The human genome v19
 
 Pulling the Human Genome v19 (hg19) and saving it locally as a local file (S4), raw html character string, and raw html character string with line breaks
 
-##Pulling the genome:
+## Pulling the genome:
+
 ```{r}
 ## Pulling the genome
 
@@ -65,8 +67,8 @@ seqchr9q34.2ABO
 ABO_char <- getSeq(genome, "chr9", start=136130563, end=136150630, as.character=TRUE)
 ```
 
+## Saving the sequence as a local file:
 
-##Saving the sequence as a local file:
 ```{r}
 ## Save Sequence as html file for easy viewing
 
@@ -119,9 +121,10 @@ saveRDS(seqchr9q34.2ABO, file = "ABO_gene.rds")
 ```
 
 \newpage
-#Analysis of the ABO gene
 
-##G+C content
+# Analysis of the ABO gene
+
+## G+C content
 
 ```{r}
 ## G+C content
@@ -163,7 +166,8 @@ chisq.test(df$atcg)
 ```
 
 \newpage
-##Nucleotide Frequency
+
+## Nucleotide Frequency
 
 ```{r}
 ## Longest Consecutive Sequence
@@ -214,7 +218,9 @@ cat("Longest consecutive sequence:", result$length, "characters of", result$char
 ```
 
 \newpage
-Runs of Nucleotides
+
+## Runs of Nucleotides
+
 ```{r}
 ## Runs of Nucleotides
 

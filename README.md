@@ -3,13 +3,22 @@ ABO-gene-analysis
 Arthur Raymond
 2024-02-16
 
-\#The human genome v19
+- [The human genome v19](#the-human-genome-v19)
+  - [Pulling the genome:](#pulling-the-genome)
+  - [Saving the sequence as a local
+    file:](#saving-the-sequence-as-a-local-file)
+- [Analysis of the ABO gene](#analysis-of-the-abo-gene)
+  - [G+C content](#gc-content)
+  - [Nucleotide Frequency](#nucleotide-frequency)
+  - [Runs of Nucleotides](#runs-of-nucleotides)
+
+# The human genome v19
 
 Pulling the Human Genome v19 (hg19) and saving it locally as a local
 file (S4), raw html character string, and raw html character string with
 line breaks
 
-\##Pulling the genome:
+## Pulling the genome:
 
 ``` r
 ## Pulling the genome
@@ -69,7 +78,7 @@ seqchr9q34.2ABO
 ABO_char <- getSeq(genome, "chr9", start=136130563, end=136150630, as.character=TRUE)
 ```
 
-\##Saving the sequence as a local file:
+## Saving the sequence as a local file:
 
 ``` r
 ## Save Sequence as html file for easy viewing
@@ -122,9 +131,9 @@ write_html_sequence(formatted_sequence, "ABO_gene_formatted.html")
 saveRDS(seqchr9q34.2ABO, file = "ABO_gene.rds")
 ```
 
-\#Analysis of the ABO gene
+# Analysis of the ABO gene
 
-\##G+C content
+## G+C content
 
 ``` r
 ## G+C content
@@ -184,7 +193,7 @@ chisq.test(df$atcg)
 #We reject the null hypothesis and conclude that there is a significant difference in the frequency of nucleotides in the ABO gene
 ```
 
-\##Nucleotide Frequency
+## Nucleotide Frequency
 
 ``` r
 ## Longest Consecutive Sequence
@@ -235,7 +244,7 @@ cat("Longest consecutive sequence:", result$length, "characters of", result$char
 
     ## Longest consecutive sequence: 19 characters of A
 
-Runs of Nucleotides
+## Runs of Nucleotides
 
 ``` r
 ## Runs of Nucleotides
