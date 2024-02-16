@@ -178,7 +178,24 @@ rownames(df) <- NULL
 df <- df[, c("Letter", "atcg")]
 #remove all rows where frequency is 0
 df <- df[df$atcg != 0,]
+#sanity check that the df is made correctly
+df[,2]==atcg[1:4]
+```
 
+    ##    A    C    G    T 
+    ## TRUE TRUE TRUE TRUE
+
+``` r
+df
+```
+
+    ##   Letter atcg
+    ## 1      A 5412
+    ## 2      C 4883
+    ## 3      G 4923
+    ## 4      T 4850
+
+``` r
 #plot the data with ggplot with g being blue, t  pink, c  green and a  red
 ggplot(df, aes(x = Letter, y = atcg, fill = Letter)) +
   geom_bar(stat = "identity") +

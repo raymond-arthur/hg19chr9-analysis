@@ -143,6 +143,9 @@ rownames(df) <- NULL
 df <- df[, c("Letter", "atcg")]
 #remove all rows where frequency is 0
 df <- df[df$atcg != 0,]
+#sanity check that the df is made correctly
+df[,2]==atcg[1:4]
+df
 
 #plot the data with ggplot with g being blue, t  pink, c  green and a  red
 ggplot(df, aes(x = Letter, y = atcg, fill = Letter)) +
